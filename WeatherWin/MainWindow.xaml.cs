@@ -19,20 +19,12 @@ namespace WeatherWin
     /// </summary>
     public partial class MainWindow : Window
     {
-        string kharkov = "https://www.gismeteo.ua/weather-kharkiv-5053/";
-        DataWeather DW = new DataWeather("kharkov");
-        //Town towns = new Town();
+        DataWeather DW = new DataWeather();
 
         public MainWindow()
         {
             InitializeComponent();
-            DW.DataHTML();
-            Town.Text = DW.Town();
-            Temperature.Text = DW.Temperature();
-            osadki.Text = DW.Osadki();
-            speed.Text = DW.Wind();
-            Napravlenie.Text = DW.Napravlenie();
-            davlenie.Text = DW.Davlenie();
+            Update();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -44,10 +36,22 @@ namespace WeatherWin
         {
             if (comboBox1.SelectedItem.ToString() == "Львов")
             {
-                string lyvov = "https://www.gismeteo.ua/weather-lviv-4949/";
+                string lyvov = @"https://www.gismeteo.ua/weather-lviv-4949/";
                 test.Text = comboBox1.SelectedItem.ToString();
-
+                DW.DataWeatherTown(lyvov);
+                Update();
             }
+        }
+
+        public void Update()
+        {
+            DW.DataHTML();
+            Town.Text = DW.Town();
+            Temperature.Text = DW.Temperature();
+            osadki.Text = DW.Osadki();
+            speed.Text = DW.Wind();
+            Napravlenie.Text = DW.Napravlenie();
+            davlenie.Text = DW.Davlenie();
         }
     }
 }

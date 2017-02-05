@@ -13,11 +13,17 @@ namespace WeatherWin
         WebRequest getDataHTML;
 
         string dataHTML, temperature, town, osadki, wind, naprav, davlenie;
-
-        public DataWeather(string town)
-        {   
-            getDataHTML = WebRequest.Create(@"town");
+        public DataWeather()
+        {
+            getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-kharkiv-5053/");
+            //getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-lviv-4949/");
         }
+
+        public void DataWeatherTown(string town)
+        {
+            getDataHTML = WebRequest.Create(town);
+        }
+        
         public string DataHTML()
         {
             try

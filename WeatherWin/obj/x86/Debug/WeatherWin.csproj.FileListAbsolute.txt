@@ -20,3 +20,14 @@ D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin_MarkupCompile.cache
 D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.g.resources
 D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Properties.Resources.resources
 D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.exe
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.pdb
+F:\WeatherWin\WeatherWin\bin\Debug\WeatherWin.exe
+F:\WeatherWin\WeatherWin\bin\Debug\WeatherWin.pdb
+F:\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.baml
+F:\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.g.cs
+F:\WeatherWin\WeatherWin\obj\x86\Debug\App.g.cs
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin_MarkupCompile.cache
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.g.resources
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Properties.Resources.resources
+F:\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache
