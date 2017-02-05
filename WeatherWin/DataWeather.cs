@@ -11,19 +11,13 @@ namespace WeatherWin
     class DataWeather
     {
         WebRequest getDataHTML;
-        string dataHTML;
-        string temperature;
-        string town;
-        string osadki;
-        string wind;
-        string naprav;
-        string davlenie;
 
-        public DataWeather()
-        {
-            getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-kharkiv-5053/");
+        string dataHTML, temperature, town, osadki, wind, naprav, davlenie;
+
+        public DataWeather(string town)
+        {   
+            getDataHTML = WebRequest.Create(@"town");
         }
-
         public string DataHTML()
         {
             try
@@ -35,8 +29,7 @@ namespace WeatherWin
             catch (Exception ex)
             {
                 
-            }
-                
+            }   
             return dataHTML;
         }
 
@@ -46,7 +39,6 @@ namespace WeatherWin
 
             return town;
         }
-
         public string Temperature()
         {
             string pattern = "&minus;";
@@ -55,7 +47,6 @@ namespace WeatherWin
             string temp = Regex.Replace(temperature, pattern, repattern);
             return temp;
         }
-
         public string Osadki()
         {
             osadki = new Regex(@"<td>(?<osadki>.*)</td>").Match(dataHTML).Groups["osadki"].Value;

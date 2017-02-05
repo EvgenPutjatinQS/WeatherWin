@@ -19,22 +19,35 @@ namespace WeatherWin
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataWeather DW = new DataWeather();
+        string kharkov = "https://www.gismeteo.ua/weather-kharkiv-5053/";
+        DataWeather DW = new DataWeather("kharkov");
+        //Town towns = new Town();
 
         public MainWindow()
         {
             InitializeComponent();
             DW.DataHTML();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
             Town.Text = DW.Town();
             Temperature.Text = DW.Temperature();
             osadki.Text = DW.Osadki();
             speed.Text = DW.Wind();
             Napravlenie.Text = DW.Napravlenie();
             davlenie.Text = DW.Davlenie();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            comboBox1.Items.Add("Львов");
+        }
+
+        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "Львов")
+            {
+                string lyvov = "https://www.gismeteo.ua/weather-lviv-4949/";
+                test.Text = comboBox1.SelectedItem.ToString();
+
+            }
         }
     }
 }

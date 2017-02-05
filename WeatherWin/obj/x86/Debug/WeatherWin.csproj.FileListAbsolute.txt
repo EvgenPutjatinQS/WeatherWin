@@ -9,3 +9,14 @@ C:\Users\putyatin\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Propert
 C:\Users\putyatin\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache
 C:\Users\putyatin\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.exe
 C:\Users\putyatin\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.pdb
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.exe
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.pdb
+D:\GitHub\WeatherWin\WeatherWin\bin\Debug\WeatherWin.exe
+D:\GitHub\WeatherWin\WeatherWin\bin\Debug\WeatherWin.pdb
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.baml
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.g.cs
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\App.g.cs
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin_MarkupCompile.cache
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.g.resources
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Properties.Resources.resources
+D:\GitHub\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache
