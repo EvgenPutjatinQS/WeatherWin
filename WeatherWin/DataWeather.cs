@@ -12,11 +12,10 @@ namespace WeatherWin
     {
         WebRequest getDataHTML;
 
-        string dataHTML, temperature, town, osadki, wind, naprav, davlenie;
+        string dataHTML, temperature, town, osadki, wind, naprav, davlenie, data_1, data_2, data_3;
         public DataWeather()
         {
             getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-kharkiv-5053/");
-            //getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-lviv-4949/");
         }
 
         public void DataWeatherTown(string town)
@@ -26,23 +25,15 @@ namespace WeatherWin
         
         public string DataHTML()
         {
-            try
-            {
-                Stream stream = getDataHTML.GetResponse().GetResponseStream();
-                StreamReader sr = new StreamReader(stream);
-                dataHTML = sr.ReadToEnd();
-            }
-            catch (Exception ex)
-            {
-                
-            }   
+            Stream stream = getDataHTML.GetResponse().GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+            dataHTML = sr.ReadToEnd();  
             return dataHTML;
         }
 
         public string Town()
         {
             town = new Regex(@"<h2 class=""typeM"">(?<town>.*)</h2>").Match(dataHTML).Groups["town"].Value;
-
             return town;
         }
         public string Temperature()
@@ -56,7 +47,6 @@ namespace WeatherWin
         public string Osadki()
         {
             osadki = new Regex(@"<td>(?<osadki>.*)</td>").Match(dataHTML).Groups["osadki"].Value;
-
             return osadki;
         }
         public string Wind()
@@ -73,6 +63,22 @@ namespace WeatherWin
         {
             naprav = new Regex(@"<dt>(?<naprav>.*)</dt>").Match(dataHTML).Groups["naprav"].Value;
             return naprav;
+        }
+
+        public string Data1()
+        {
+            data_1 = new Regex(@"<dl class=""date wrap""><dt>(?<data_1>.*)</dt><dd>(?<data_1>.*)</dd></dl>").Match(dataHTML).Groups["data_1"].Value;
+            return data_1;
+        }
+        public string Data2()
+        {
+            data_2 = new Regex(@"<dl class=""date wrap""><dt>(?<data_2>.*)</dt><dd>(?<data_2>.*)</dd></dl>").Match(dataHTML).Groups["data_2"].Value;
+            return data_2;
+        }
+        public string Data3()
+        {
+            data_3 = new Regex(@"<dl class=""date wrap""><dt>ЧТ</dt><dd>(?<data_3>.*)</dd></dl>").Match(dataHTML).Groups["data_3"].Value;
+            return data_3;
         }
     }
 }
