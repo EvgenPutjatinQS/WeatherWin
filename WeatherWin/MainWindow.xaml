@@ -39,7 +39,6 @@
             <MenuItem Header="Погода" FontSize="12" FontWeight="Bold" Name="weather">
                 <MenuItem Header="На 1 день" Foreground="Black" Click="day1_Click"/>
                 <MenuItem Header="На 3 дня" Foreground="Black" Click="days3_Click"/>
-                <MenuItem Header="На 5 дней" Foreground="Black" Click="days5_Click"/>
             </MenuItem>
         </Menu>
         <TextBlock Canvas.Left="34" Canvas.Top="12" FontSize="14" Foreground="White" Height="20" Name="Town3" Opacity="2" Text="" TextAlignment="Right" Width="110" />
@@ -50,5 +49,11 @@
         <TextBlock Canvas.Left="20" Canvas.Top="34" FontSize="14" Foreground="White" Height="19" Name="Date3_1" Opacity="2" Text="Давление" TextAlignment="Center" Width="89" />
         <TextBlock Canvas.Left="126" Canvas.Top="34" FontSize="14" Foreground="White" Height="19" Name="Date3_2" Opacity="2" Text="Давление" TextAlignment="Center" Width="89" />
         <TextBlock Canvas.Left="236" Canvas.Top="34" FontSize="14" Foreground="White" Height="19" Name="Date3_3" Opacity="2" Text="Давление" TextAlignment="Center" Width="89" />
+        <TextBlock Canvas.Left="26" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempN1" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
+        <TextBlock Canvas.Left="69" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempD1" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
+        <TextBlock Canvas.Left="132" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempN2" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
+        <TextBlock Canvas.Left="175" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempD2" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
+        <TextBlock Canvas.Left="239" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempN3" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
+        <TextBlock Canvas.Left="282" Canvas.Top="102" FontSize="24" Foreground="White" Height="36" Name="TempD3" Opacity="2" Text="-25" TextAlignment="Center" Width="40" />
     </Canvas>
 </Window>

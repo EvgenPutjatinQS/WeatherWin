@@ -64,3 +64,14 @@ C:\Users\Genius\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin_MarkupCom
 C:\Users\Genius\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.g.resources
 C:\Users\Genius\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Properties.Resources.resources
 C:\Users\Genius\Desktop\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.exe
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.pdb
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\bin\Debug\WeatherWin.exe
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\bin\Debug\WeatherWin.pdb
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.baml
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\MainWindow.g.cs
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\App.g.cs
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin_MarkupCompile.cache
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.g.resources
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.Properties.Resources.resources
+C:\Users\putyatin\Desktop\C#\WeatherWin\WeatherWin\obj\x86\Debug\WeatherWin.csproj.GenerateResource.Cache

@@ -11,7 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Net.NetworkInformation;
+using System.Net;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WeatherWin
 {
@@ -21,7 +23,6 @@ namespace WeatherWin
     public partial class MainWindow : Window
     {
         DataWeather DW = new DataWeather();
-
         string kharkov = @"https://www.gismeteo.ua/weather-kharkiv-5053/";
         string lyviv = @"https://www.gismeteo.ua/weather-lviv-4949/";
         string odessa = @"https://www.gismeteo.ua/weather-odessa-4982/";
@@ -33,7 +34,6 @@ namespace WeatherWin
             InitializeComponent();
             Update();
             Off_3_Days();
-            Off_5_Days();
         }
 
         public void Update()
@@ -49,12 +49,17 @@ namespace WeatherWin
             Napravl.Text = DW.Napravlenie();
             Davlenie.Text = DW.Davlenie();
             Data.Text = DateTime.Now.ToString("dd.MM.yyyy");
-            Date3_1.Text = DW.Data1();
-            Date3_2.Text = DW.Data2();
+            Date3_1.Text = DW.Data_3();
+            Date3_2.Text = DW.Data_3_2();
+            Date3_3.Text = DW.Data_3_3();
+            TempN1.Text = DW.TempN_1_3();
+            TempD1.Text = DW.TempD_1_3();
+            TempN2.Text = DW.TempN_2_3();
+            TempD2.Text = DW.TempD_2_3();
+            TempN3.Text = DW.TempN_3_3();
+            TempD3.Text = DW.TempD_3_3();
             Picture();
-            
         }
-
         void Picture()
         {
             switch (Osadki.Text)
@@ -76,52 +81,42 @@ namespace WeatherWin
                     break;
             }
         }
-        
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             DW.DataWeatherTown(lyviv);
             Update();
         }
-        private void Kharkov_Click(object sender, RoutedEventArgs e)
+        void Kharkov_Click(object sender, RoutedEventArgs e)
         {
             DW.DataWeatherTown(kharkov);
             Update();
         }
-        private void Kyev_Click(object sender, RoutedEventArgs e)
+        void Kyev_Click(object sender, RoutedEventArgs e)
         {
             DW.DataWeatherTown(kyev);
             Update();
         }
-        private void Odessa_Click(object sender, RoutedEventArgs e)
+        void Odessa_Click(object sender, RoutedEventArgs e)
         {
             DW.DataWeatherTown(odessa);
             Update();
         }
-        private void Uschorod_Click(object sender, RoutedEventArgs e)
+        void Uschorod_Click(object sender, RoutedEventArgs e)
         {
             DW.DataWeatherTown(uschgorod);
             Update();
         }
 
-        private void day1_Click(object sender, RoutedEventArgs e)
+        void day1_Click(object sender, RoutedEventArgs e)
         {
             On_1_Day();
             Off_3_Days();
-            Off_5_Days();
         }
-        private void days3_Click(object sender, RoutedEventArgs e)
+        void days3_Click(object sender, RoutedEventArgs e)
         {
             On_3_Days();
             Off_1_Day();
-            Off_5_Days();
         }
-        private void days5_Click(object sender, RoutedEventArgs e)
-        {
-            On_5_Days();
-            Off_1_Day();
-            Off_3_Days();
-        }
-
         private void On_1_Day()
         {
             ViewImage.Opacity = 1;
@@ -165,6 +160,12 @@ namespace WeatherWin
             Date3_1.Opacity = 2;
             Date3_2.Opacity = 2;
             Date3_3.Opacity = 2;
+            TempN1.Opacity = 2;
+            TempN2.Opacity = 2;
+            TempN3.Opacity = 2;
+            TempD1.Opacity = 2;
+            TempD2.Opacity = 2;
+            TempD3.Opacity = 2;
         }
         private void Off_3_Days()
         {
@@ -175,14 +176,12 @@ namespace WeatherWin
             Date3_1.Opacity = 0;
             Date3_2.Opacity = 0;
             Date3_3.Opacity = 0;
-        }
-        private void On_5_Days()
-        {
-            Town5.Opacity = 2;
-        }
-        private void Off_5_Days()
-        {
-            Town5.Opacity = 0;
+            TempN1.Opacity = 0;
+            TempN2.Opacity = 0;
+            TempN3.Opacity = 0;
+            TempD1.Opacity = 0;
+            TempD2.Opacity = 0;
+            TempD3.Opacity = 0;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

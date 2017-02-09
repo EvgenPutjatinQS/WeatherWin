@@ -12,7 +12,11 @@ namespace WeatherWin
     {
         WebRequest getDataHTML;
 
-        string dataHTML, temperature, town, osadki, wind, naprav, davlenie, data_1, data_2, data_3;
+        string dataHTML, temperature, town, osadki, wind, naprav, davlenie;
+        string data_3 = @"<dl class=""date wrap(?<1>.*)""><dt>(?<1>.*)</dt><dd>(?<data_3>.*)</dd></dl>";
+        string temp_3 = @"<div class=""temp""><span class='value m_temp c'>(?<data_3>.*)</span><span class='value m_temp f' style='display:none'>(?<data_1>.*)</span>..<em><span class='value m_temp c'>(?<data_2>.*)</span><span";
+        Match match, match_temp;
+        Regex reg, temp_reg;
         public DataWeather()
         {
             getDataHTML = WebRequest.Create(@"https://www.gismeteo.ua/weather-kharkiv-5053/");
@@ -64,21 +68,82 @@ namespace WeatherWin
             naprav = new Regex(@"<dt>(?<naprav>.*)</dt>").Match(dataHTML).Groups["naprav"].Value;
             return naprav;
         }
+        public string Data_3()
+        {
+            string data;
+            reg = new Regex(data_3);
+            match = reg.Match(dataHTML);
+            data = match.Groups["data_3"].Value;
+            return data;
+        }
+        public string Data_3_2()
+        {
+            string data;
+            match = match.NextMatch();
+            data = match.Groups["data_3"].Value;
+            return data;
+        }
+        public string Data_3_3()
+        {
+            string data;
+            match = match.NextMatch();
+            data = match.Groups["data_3"].Value;
+            return data;
+        }
 
-        public string Data1()
+        public string TempN_1_3()
         {
-            data_1 = new Regex(@"<dl class=""date wrap""><dt>(?<data_1>.*)</dt><dd>(?<data_1>.*)</dd></dl>").Match(dataHTML).Groups["data_1"].Value;
-            return data_1;
+            string pattern = "&minus;";
+            string repattern = "-";
+            temp_reg = new Regex(temp_3);
+            match_temp = temp_reg.Match(dataHTML);
+            string data = match_temp.Groups["data_3"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
         }
-        public string Data2()
+        public string TempD_1_3()
         {
-            data_2 = new Regex(@"<dl class=""date wrap""><dt>(?<data_2>.*)</dt><dd>(?<data_2>.*)</dd></dl>").Match(dataHTML).Groups["data_2"].Value;
-            return data_2;
+            string pattern = "&minus;";
+            string repattern = "-";
+            temp_reg = new Regex(temp_3);
+            match_temp = temp_reg.Match(dataHTML);
+            string data = match_temp.Groups["data_2"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
         }
-        public string Data3()
+        public string TempN_2_3()
         {
-            data_3 = new Regex(@"<dl class=""date wrap""><dt>ЧТ</dt><dd>(?<data_3>.*)</dd></dl>").Match(dataHTML).Groups["data_3"].Value;
-            return data_3;
+            string pattern = "&minus;";
+            string repattern = "-";
+            match_temp = match_temp.NextMatch();
+            string data = match_temp.Groups["data_3"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
+        }
+        public string TempD_2_3()
+        {
+            string pattern = "&minus;";
+            string repattern = "-";
+            string data = match_temp.Groups["data_2"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
+        }
+        public string TempN_3_3()
+        {
+            string pattern = "&minus;";
+            string repattern = "-";
+            match_temp = match_temp.NextMatch();
+            string data = match_temp.Groups["data_3"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
+        }
+        public string TempD_3_3()
+        {
+            string pattern = "&minus;";
+            string repattern = "-";
+            string data = match_temp.Groups["data_2"].Value;
+            string temp = Regex.Replace(data, pattern, repattern);
+            return temp;
         }
     }
 }
