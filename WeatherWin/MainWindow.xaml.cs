@@ -15,6 +15,7 @@ using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
 namespace WeatherWin
 {
     /// <summary>
@@ -32,11 +33,35 @@ namespace WeatherWin
         public MainWindow()
         {
             InitializeComponent();
-            Update();
+            GetConnectInetrnet();
             Off_3_Days();
         }
 
-        public void Update()
+        void GetConnectInetrnet()
+        {
+            try
+            {
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://www.gismeteo.ua");
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            if (HttpStatusCode.OK == resp.StatusCode)
+            {
+                resp.Close();
+                Update();
+                Off_3_Days();
+            }
+            else
+            {
+                resp.Close();
+                Update();
+                
+            }
+            }
+            catch(WebException)
+            {
+                
+            }
+        }
+        void Update()
         {
             
             DW.DataHTML();
@@ -182,6 +207,11 @@ namespace WeatherWin
             TempD1.Opacity = 0;
             TempD2.Opacity = 0;
             TempD3.Opacity = 0;
+        }
+
+        void Reboot_Click(object sender, RoutedEventArgs e)
+        {
+            GetConnectInetrnet();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
