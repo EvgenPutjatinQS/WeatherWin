@@ -33,6 +33,8 @@ namespace WeatherWin
         public MainWindow()
         {
             InitializeComponent();
+            Form.Left = System.Windows.SystemParameters.WorkArea.Width - Form.Width;
+            Form.Top = System.Windows.SystemParameters.WorkArea.Height - Form.Height;
             GetConnectInetrnet();
             Off_3_Days();
         }

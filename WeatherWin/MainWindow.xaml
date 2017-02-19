@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WeatherWin.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" WindowStyle="None" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="203" d:DesignWidth="566" Width="340" Height="170" ResizeMode="NoResize" Background="#FF696161" BorderBrush="#FF7D7070">
+        Title="MainWindow" WindowStyle="None" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="203" d:DesignWidth="566" Width="340" Height="170" ResizeMode="NoResize" Background="#FF696161" BorderBrush="#FF7D7070" Icon="/WeatherWin;component/Images/Пасмурно_Дымка.png" Name="Form">
     <Canvas Height="170" Name="canvas1" Width="340">
         <Canvas.Background>
             <ImageBrush ImageSource="/WeatherWin;component/Images/Background.jpg" Stretch="None" TileMode="None" />
